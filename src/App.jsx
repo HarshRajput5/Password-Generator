@@ -75,21 +75,39 @@ function App() {
         sx={{
           flexGrow: 1,
           mt: 10,
-          width: "50%",
-          height: "150px",
+          pt: 5,
+          width: {
+            xs: "90%",
+            sm: "90%",
+            md: "70%",
+            lg: "50%",
+          },
           alignContent: "center",
           backgroundColor: "gray",
         }}
       >
         <Grid container>
-          <Grid size={8} spacing={0}>
+          <Grid
+            size={{
+              xs: 8,
+              sm: 8,
+              md: 8,
+              lg: 8,
+            }}
+            spacing={0}
+          >
             <TextField
+              disabled
               fullWidth
               label={password}
               id="fullWidth"
               sx={{
-                "& .MuiInputBase-input": { color: "white" }, // Text color
-                "& .MuiInputLabel-root": { color: "white" }, // Label color
+                "& .MuiInputBase-input.Mui-disabled": {
+                  color: "white !important",
+                }, // Force white text on disabled
+                "& .MuiInputLabel-root.Mui-disabled": {
+                  color: "white !important",
+                }, // Force white label on disabled
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": { borderRadius: "8px 0 0 8px" }, // Ensure outline follows
                   "& > fieldset": { borderColor: "white" }, // Default border color
@@ -99,7 +117,14 @@ function App() {
               }}
             />
           </Grid>
-          <Grid size={4}>
+          <Grid
+            size={{
+              xs: 4,
+              sm: 4,
+              md: 4,
+              lg: 4,
+            }}
+          >
             <Button
               variant="contained"
               onClick={copyToClipboard}
@@ -113,7 +138,12 @@ function App() {
             </Button>
           </Grid>
           <Grid
-            size={4}
+            size={{
+              xs: 8,
+              sm: 8,
+              md: 8,
+              lg: 4,
+            }}
             sx={{
               mt: 3,
             }}
@@ -122,19 +152,29 @@ function App() {
               value={length}
               onChange={handleChange}
               aria-labelledby="length"
-              min={0}
+              min={8}
               max={100}
               step={1}
             />
           </Grid>
           <Grid
-            size={0.5}
+            size={{
+              xs: 1,
+              sm: 1,
+              md: 1,
+              lg: 1,
+            }}
             sx={{
               mt: 3,
             }}
           />
           <Grid
-            size={2}
+            size={{
+              xs: 3,
+              sm: 3,
+              md: 3,
+              lg: 2,
+            }}
             sx={{
               mt: 3,
             }}
@@ -145,7 +185,12 @@ function App() {
           </Grid>
 
           <Grid
-            size={2}
+            size={{
+              xs: 6,
+              sm: 6,
+              md: 6,
+              lg: 2.5,
+            }}
             sx={{
               mt: 2,
             }}
@@ -159,7 +204,12 @@ function App() {
             />
           </Grid>
           <Grid
-            size={2}
+            size={{
+              xs: 6,
+              sm: 6,
+              md: 6,
+              lg: 2.5,
+            }}
             sx={{
               mt: 2,
             }}
